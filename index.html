@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			input[type=text] {
+			margin: 8px 0;
+    	width: 100%;
+    	box-sizing: border-box;
+			border: 2px solid white;
+    	border-radius: 4px;
+    	font-size: 16px;
+    	background-color: black;
+    	background-image: url('../../images/searchicon.png');
+    	background-position: 10px 10px;
+    	background-repeat: no-repeat;
+    	padding: 12px 20px 12px 40px;
+		}
+	</style>
+
+		<title>News</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body style="background-color: #0d0e1a">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">News <span>Connect</span></a></div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>NEWS</h1>
+						<p>Type in a news keyword...<br />and get all related news...</p>
+					</header>
+						<!--<a href="record.html" class="button big scrolly">Start Recording</a>-->
+						<form id="form" method='GET' action="/getkeyword">
+						  <input type="text" id="keyWord" name="keyWord" placeholder="Search..">
+							<input type="button" value="Submit">
+						</form>
+						<!-- <script>
+        			function getInput() {
+								var form = document.getElementById("form");
+            		var keyWord= form.elements["search"].value;
+            		document.getElementById("demo").innerHTML+="hello <br>"+keyWord;
+								// getJSON();
+							}
+              //
+							// function getJSON() {
+							// 	const NewsAPI = require('newsapi');
+							// 	const newsapi = new NewsAPI('39447df757f0434f9b01b2f2d39dac0e');
+							// 	newsapi.v2.topHeadlines({
+  						// 		sources: 'bbc-news,the-verge',
+  						// 		q: 'bit',
+  						// 		category: 'business',
+  						// 		language: 'en',
+  						// 		country: 'us'
+							// 	}).then(response => {
+  						// 		console.log(response);
+							// 	});
+							// }
+    				</script> -->
+
+					<!-- <a href="/SpeechToText-WebSockets-Javascript/samples/browser/Sample.html" class="button big scrolly">Start Recording</a> -->
+				</div>
+			</section>
+
+		<!-- Main -->
+			<div id="main">
+				<p id="demo"></p>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
