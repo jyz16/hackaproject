@@ -46,6 +46,8 @@ var express = require("express");
      res.sendFile(__dirname+"/index.html");
  });
 
+var newsObjects = [];
+
  app.get("/getkeyword", function (req, res){
      var keyWord = req.query.keyWord;
        console.log("got keyword.");
@@ -60,13 +62,27 @@ var express = require("express");
          q: keyWord,
          // category: 'business',
          language: 'en',
+         sortBy: 'publishedAt',
+         pageSize: 100,
          // country: 'us'
        }).then(response => {
          // console.log(response);
-         // for (var source in response.articles) {
-         //   res.write("source: " + response.articles.source);
-         // }
-         res.write("response is:"+JSON.stringify(response.articles));
+         var i = 0;
+         for (var source in response.articles) {
+           // res.write("hiiiiiiiiiiiii");
+           newsObjects[i] = {
+             title: JSON.stringify(response.articles[source].title),
+             publishedAt: JSON.stringify(response.articles[source].publishedAt),
+             author: JSON.stringify(response.articles[source].author),
+             description: JSON.stringify(response.articles[source].description),
+             source: JSON.stringify(response.articles[source].source.name), //??
+             url: JSON.stringify(response.articles[source].url
+           };
+           res.write(source + JSON.stringify(response.articles[source].title)+"\n");
+           res.write(JSON.stringify(response.articles[source].publishedAt)+"\n"+"\n");
+           i++;
+         }
+         // res.write("response is:"+JSON.stringify(response.articles));
          res.end();
          //return response;
        }).catch(err => console.log(err));
