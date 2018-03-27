@@ -47,6 +47,7 @@ var express = require("express");
  });
 
 var newsObjects = [];
+app.set('view engine', 'jade');
 
  app.get("/getkeyword", function (req, res){
      var keyWord = req.query.keyWord;
@@ -66,25 +67,34 @@ var newsObjects = [];
          pageSize: 100,
          // country: 'us'
        }).then(response => {
-         // console.log(response);
-         var i = 0;
+         res.setHeader('Content-Type', 'application/json');
          for (var source in response.articles) {
-           // res.write("hiiiiiiiiiiiii");
-           newsObjects[i] = {
-             title: JSON.stringify(response.articles[source].title),
-             publishedAt: JSON.stringify(response.articles[source].publishedAt),
-             author: JSON.stringify(response.articles[source].author),
-             description: JSON.stringify(response.articles[source].description),
-             source: JSON.stringify(response.articles[source].source.name), //??
-             url: JSON.stringify(response.articles[source].url
-           };
-           res.write(source + JSON.stringify(response.articles[source].title)+"\n");
-           res.write(JSON.stringify(response.articles[source].publishedAt)+"\n"+"\n");
-           i++;
+           res.write(JSON.stringify(response.articles[source],null,3));
          }
-         // res.write("response is:"+JSON.stringify(response.articles));
-         res.end();
-         //return response;
+        res.end();
+         // var i = 0;
+         // for (var source in response.articles) {
+         //   // res.write("hiiiiiiiiiiiii");
+         //   var obj = {
+         //     title: JSON.stringify(response.articles[source].title),
+         //     publishedAt: JSON.stringify(response.articles[source].publishedAt),
+         //     author: JSON.stringify(response.articles[source].author),
+         //     description: JSON.stringify(response.articles[source].description),
+         //     source: JSON.stringify(response.articles[source].source.name), //??
+         //     url: JSON.stringify(response.articles[source].url)
+         //   };
+         //   newsObjects[i] = obj;
+         //   // res.write(source + JSON.stringify(response.articles[source].title)+"\n");
+         //   // res.write(JSON.stringify(response.articles[source].publishedAt)+"\n"+"\n");
+         //   res.write(source + obj.title + "\n");
+         //   res.write(obj.publishedAt + "\n\n");
+         //   i++;
+         // }
+         // res.write("Recorded everything in list. First item is : " + newsObjects[0].title + "\n");
+         // // res.write("response is:"+JSON.stringify(response.articles));
+         // res.end();
+         // // res.render('result',{title: 'ben\'s cookies', resultData: newsObjects[0]});
+         // //return response;
        }).catch(err => console.log(err));
        //res.json(responseJson);
 
@@ -93,7 +103,6 @@ var newsObjects = [];
      }
  });
 
- //start the server
+ //start the server at localhost 8080
  app.listen(8080);
-
  console.log("News search at http://localhost:8080");

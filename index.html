@@ -17,10 +17,14 @@
 		}
 	</style>
 
-		<title>News</title>
+		<title>News Timeline</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<!-- <link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset --> -->
+		<!-- <link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style --> -->
+		<!-- <link rel="stylesheet" href="assets/css/demo.css"> <!-- Demo style --> -->
 	</head>
 	<body style="background-color: #0d0e1a">
 
@@ -39,40 +43,94 @@
 						<!--<a href="record.html" class="button big scrolly">Start Recording</a>-->
 						<form id="form" method='GET' action="/getkeyword">
 						  <input type="text" id="keyWord" name="keyWord" placeholder="Search..">
-							<input type="button" value="Submit">
+							<button name="button" value="submit" id="btn">Submit</button>
 						</form>
-						<!-- <script>
-        			function getInput() {
-								var form = document.getElementById("form");
-            		var keyWord= form.elements["search"].value;
-            		document.getElementById("demo").innerHTML+="hello <br>"+keyWord;
-								// getJSON();
-							}
-              //
-							// function getJSON() {
-							// 	const NewsAPI = require('newsapi');
-							// 	const newsapi = new NewsAPI('39447df757f0434f9b01b2f2d39dac0e');
-							// 	newsapi.v2.topHeadlines({
-  						// 		sources: 'bbc-news,the-verge',
-  						// 		q: 'bit',
-  						// 		category: 'business',
-  						// 		language: 'en',
-  						// 		country: 'us'
-							// 	}).then(response => {
-  						// 		console.log(response);
-							// 	});
-							// }
-    				</script> -->
-
-					<!-- <a href="/SpeechToText-WebSockets-Javascript/samples/browser/Sample.html" class="button big scrolly">Start Recording</a> -->
 				</div>
 			</section>
 
 		<!-- Main -->
 			<div id="main">
 				<p id="demo"></p>
-
 			</div>
+
+			<section id="cd-timeline" class="cd-container">
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-picture">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="cd-timeline-content">
+			<h2>Title of section 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+			<a href="#0" class="cd-read-more">Read more</a>
+			<span class="cd-date">Jan 14</span>
+		</div> <!-- cd-timeline-content -->
+	</div> <!-- cd-timeline-block -->
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-movie">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="cd-timeline-content">
+			<h2>Title of section 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+			<a href="#0" class="cd-read-more">Read more</a>
+			<span class="cd-date">Jan 18</span>
+		</div> <!-- cd-timeline-content -->
+	</div> <!-- cd-timeline-block -->
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-picture">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="cd-timeline-content">
+			<h2>Title of section 3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+			<a href="#0" class="cd-read-more">Read more</a>
+			<span class="cd-date">Jan 24</span>
+		</div> <!-- cd-timeline-content -->
+	</div> <!-- cd-timeline-block -->
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-location">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="cd-timeline-content">
+			<h2>Title of section 4</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+			<a href="#0" class="cd-read-more">Read more</a>
+			<span class="cd-date">Feb 14</span>
+		</div> <!-- cd-timeline-content -->
+	</div> <!-- cd-timeline-block -->
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-location">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="cd-timeline-content">
+			<h2>Title of section 5</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+			<a href="#0" class="cd-read-more">Read more</a>
+			<span class="cd-date">Feb 18</span>
+		</div> <!-- cd-timeline-content -->
+	</div> <!-- cd-timeline-block -->
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-movie">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+		</div> <!-- cd-timeline-img -->
+
+		<div class="cd-timeline-content">
+			<h2>Final Section</h2>
+			<p>This is the content of the last section</p>
+			<span class="cd-date">Feb 26</span>
+		</div> <!-- cd-timeline-content -->
+	</div> <!-- cd-timeline-block -->
+</section> <!-- cd-timeline -->
 
 		<!-- Scripts -->
 			<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
@@ -82,6 +140,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/timeline.js"></script> <!-- Resource JavaScript -->
 
 	</body>
 </html>
